@@ -1,0 +1,14 @@
+<%= form_with url: "/add", method: :post do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %><br>
+  <%= form.label :hobby %>
+  <%= form.text_field :hobby %><br>
+
+  <%= form.submit "Create" %>
+<% end %>
+
+<% unless session[:students].nil? %>
+  <% session[:students].each do |student| %>
+    <%= student[0] %>:  <%= student[1] %><br>
+  <% end %>
+<% end %>
